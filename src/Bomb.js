@@ -1,25 +1,26 @@
-// your Bomb code here
-
+// your Bomb code her
 import React, {Component} from "react"
 
 class Bomb extends React.Component {
   constructor(props) { 
     super()
     this.state = {
-      secondsLeft: props.initalCount
+      secondsLeft: props.initialCount
     }
-    console.log(props.initialCount)
   }
 
-  // bombTimer() {
-  //   setTimeout (() => console.log("BOOM!"), this.state.secondsLeft)
-  // }
     render() {
-      const dispMsg = this.state.secondsLeft === 0 ? 'Boom!' : `${this.state.secondsLeft} seconds left before I go boom!`;
-      
+      let dispMsg = ""
+      if (this.state.secondsLeft === 0) {
+         dispMsg = 'Boom!' 
+      } 
+      else {
+         dispMsg =  this.state.secondsLeft + " seconds left before I go boom!"
+      }
+ 
         return (
             <div>
-                <p> {dispMsg} </p>
+                <p>{dispMsg}</p>
             </div>
         )    
     }
